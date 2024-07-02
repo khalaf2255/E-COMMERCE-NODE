@@ -30,25 +30,25 @@ const initApp = (app, express) => {
     //     }
     // }
 
-    // app.use(cors(corsOptions))
+    app.use(cors())
 
-    app.use(async (req, res, next) => {
-        console.log(req.header('origin'));
-        if (!whitelist.includes(req.header('origin'))) {
-            return next(new Error("Not Allowed By Cors", { cause: 403 }))
-        }
-        for (const origin of whitelist) {
-            if (req.header('origin') == origin) {
-                await res.header('Access-Controls-Allow-Origin', origin)
-                break;
-            }
-        }
-        await res.header('Access-Controls-Allow-Headers', "*")
-        await res.header('Access-Controls-Allow-Provate-Network', "true")
-        await res.header('Access-Controls-Allow-Methods', "*")
-        console.log('Origin work');
-        next()
-    })
+    // app.use(async (req, res, next) => {
+    //     console.log(req.header('origin'));
+    //     if (!whitelist.includes(req.header('origin'))) {
+    //         return next(new Error("Not Allowed By Cors", { cause: 403 }))
+    //     }
+    //     for (const origin of whitelist) {
+    //         if (req.header('origin') == origin) {
+    //             await res.header('Access-Controls-Allow-Origin', origin)
+    //             break;
+    //         }
+    //     }
+    //     await res.header('Access-Controls-Allow-Headers', "*")
+    //     await res.header('Access-Controls-Allow-Provate-Network', "true")
+    //     await res.header('Access-Controls-Allow-Methods', "*")
+    //     console.log('Origin work');
+    //     next()
+    // })
     app.use(express.json())
 
     if (process.env.MOOD == "DEV") {

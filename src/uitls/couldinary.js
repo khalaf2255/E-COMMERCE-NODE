@@ -16,9 +16,9 @@ cloudinary.config({
     // *api_key: "692589662126679",
     // *cloud_name: "dygrupndu",
     // *secure: true
-    api_secret: "2kJdHxa2LFiBax_06xg-GaUaw18",
-    api_key: "773118566416578",
-    cloud_name: "dfeidulc9",
+api_secret: "2kJdHxa2LFiBax_06xg-GaUaw18",
+api_key: "773118566416578",
+cloud_name: "dfeidulc9",
     secure: true
 });
 
