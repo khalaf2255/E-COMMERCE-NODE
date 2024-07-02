@@ -1,3 +1,9 @@
-export const getReviews = async(req, res, next) => {
-    return res.status(201).send({ message: "Reviews" })
-}   
+import { roles } from "../../middleware/authntication.js";
+
+
+export const endPoint = {
+    createReview: [roles.user],
+    updateReview: [roles.user],
+}
+
+ 

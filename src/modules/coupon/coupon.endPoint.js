@@ -1,3 +1,4 @@
-export const getCoupon = async(req, res, next) => {
-    return res.status(201).send({ message: "Brand" })
-}   
+import { roles } from "../../middleware/authntication.js";
+
+export const endPoint = {
+    create: [roles.admin]}

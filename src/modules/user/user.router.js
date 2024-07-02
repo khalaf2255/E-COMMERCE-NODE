@@ -1,7 +1,12 @@
-import * as userController from  './user.endPoint.js'
-import {Router} from "express"
+import { authFun, roles } from '../../middleware/authntication.js';
+import * as userController from './controller/user.js'
+import { Router } from "express"
 const router = Router();
 
-router.get("/", userController.getUser) 
+router.get("/", 
+    userController.getUser)
 
-export default router 
+// *router.patch("/sendCode", userController.sendCode)
+
+
+export default router   

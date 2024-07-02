@@ -20,7 +20,7 @@ const sendEmail = async ({
 
   
   const info = await transporter.sendMail({
-    from: `"khalaf 👻" <${from}>`, // sender address
+    from: `"khalaf 👻" <${from}>`, // *sender address
     to,
     subject,
     cc,

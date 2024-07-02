@@ -1,3 +1,8 @@
-export const getOrder = async(req, res, next) => {
-    return res.status(201).send({ message: "Order" })
-}   
+import { roles } from "../../middleware/authntication.js";
+
+export const endPoint = {
+    createOrder: [roles.user],
+    cancelOrder: [roles.user],
+    changeOrderStatus: [roles.admin],
+    rejectedOrder: [roles.user],
+}

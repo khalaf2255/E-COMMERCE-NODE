@@ -1,3 +1,6 @@
-export const getCart = async(req, res, next) => {
-    return res.status(201).send({ message: "Cart" })
-}   
+import { roles } from "../../middleware/authntication.js";
+
+export const endPoint = {
+    create: [roles.user],
+    remove: [roles.user],
+}

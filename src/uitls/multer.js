@@ -1,13 +1,11 @@
 import multer from "multer";
-
 export const fileValidation = {
   image: ["image/jpeg", "image/png", "image/gif"],
   file: ["application/pdf", "application/msword"],
 };
-
 export function fileUpload(validationFileUploaded = []) {
-  const storage = multer.diskStorage({});
 
+  const storage = multer.diskStorage({});
   function fileFilter(req, file, cb) {
     if (validationFileUploaded.includes(file.mimetype)) {
       cb(null, true);
@@ -16,5 +14,5 @@ export function fileUpload(validationFileUploaded = []) {
     }
   }
   const upload = multer({ fileFilter, storage });
-  return upload;
+   return upload;
 }
